@@ -5,10 +5,9 @@ import Image from "next/image";
 import { useRef, type CSSProperties, type PointerEvent } from "react";
 import { ArrowDownRight, ArrowUpRight } from "@/components/ui/icons";
 import { ZMark } from "@/components/ui/z-mark";
-import { whatsapp } from "@/lib/site";
+import { site } from "@/lib/site";
 
 const words = ["One", "studio", "for", "your", "website,", "marketing", "&", "content."];
-const startProject = whatsapp("Hi ZockTech! I'd like to start a project.");
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
 
 export function Hero() {
@@ -163,9 +162,7 @@ export function Hero() {
                     Websites and web apps on React + Next.js. Live in days, not months.
                   </p>
                   <a
-                    href={startProject}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={site.phoneHref}
                     className="btn btn-ink mt-auto h-8 w-fit px-4 text-[11px]"
                   >
                     Book a call
@@ -240,9 +237,7 @@ export function Hero() {
             </span>
           </span>
           <a
-            href={startProject}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="anim-card btn btn-primary pointer-events-auto mb-[1.3vw] hidden h-12 px-6 text-sm lg:inline-flex"
             style={d(1.25)}
           >
@@ -260,7 +255,7 @@ export function Hero() {
 
       {/* mobile CTA */}
       <div className="anim-fade-up absolute inset-x-4 bottom-6 z-30 sm:inset-x-8 lg:hidden" style={d(0.9)}>
-        <a href={startProject} target="_blank" rel="noopener noreferrer" className="btn btn-primary h-14 w-full text-base">
+        <a href="#contact" className="btn btn-primary h-14 w-full text-base">
           Start a project <ArrowUpRight size={18} />
         </a>
       </div>

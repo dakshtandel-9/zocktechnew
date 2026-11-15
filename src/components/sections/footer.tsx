@@ -104,6 +104,7 @@ export function Footer({ page = "home" }: { page?: SitePage }) {
                   </a>
                 </li>
                 <li>{site.hours}</li>
+                <li>Based in {site.addressDisplay}</li>
                 <li>Serving clients across {site.location}</li>
               </ul>
             </div>

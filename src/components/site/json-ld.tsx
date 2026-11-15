@@ -32,7 +32,7 @@ export function JsonLd() {
         })),
         email: site.email,
         areaServed: { "@type": "Country", name: "India" },
-        address: { "@type": "PostalAddress", addressCountry: "IN" },
+        address: { "@type": "PostalAddress", addressLocality: site.city, addressRegion: site.region, addressCountry: "IN" },
         sameAs: [site.instagram],
         founder: { "@type": "Person", name: site.founder },
         openingHoursSpecification: [

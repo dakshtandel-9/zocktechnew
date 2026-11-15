@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { ConsentNote } from "@/components/site/consent-note";
-import { ArrowUpRight, Check, Clock, Instagram, Mail, Phone, WhatsApp } from "@/components/ui/icons";
+import { ArrowUpRight, Check, Clock, Instagram, Mail, MapPin, Phone, WhatsApp } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/cn";
 import { contactServices, phones, site, whatsapp } from "@/lib/site";
@@ -37,6 +37,7 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
   const [selected, setSelected] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
   const [lastMessage, setLastMessage] = useState("");
+  const [via, setVia] = useState<"whatsapp" | "email">("whatsapp");
 
   const toggle = (s: string) => setSelected((cur) => (cur.includes(s) ? cur.filter((x) => x !== s) : [...cur, s]));
 
@@ -51,7 +52,13 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
       fd.get("offers") === "yes",
     );
     setLastMessage(message);
-    window.open(whatsapp(message), "_blank", "noopener,noreferrer");
+    const viaEmail = (e.nativeEvent as SubmitEvent).submitter?.getAttribute("value") === "email";
+    if (viaEmail) {
+      window.location.href = `mailto:${site.email}?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(message)}`;
+    } else {
+      window.open(whatsapp(message), "_blank", "noopener,noreferrer");
+    }
+    setVia(viaEmail ? "email" : "whatsapp");
     setSent(true);
   }
 
@@ -79,14 +86,26 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                   scoped and started within 24 hours.
                 </p>
 
-                <a
-                  href={whatsapp("Hi ZockTech! I'd like to discuss a project.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary mt-8 h-14 w-full px-7 text-base sm:w-fit"
-                >
-                  <WhatsApp size={20} /> Chat on WhatsApp
-                </a>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href={whatsapp("Hi ZockTech! I'd like to discuss a project.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary h-14 w-full px-7 text-base sm:w-fit"
+                  >
+                    <WhatsApp size={20} /> Chat on WhatsApp
+                  </a>
+                  {/* Non-WhatsApp routes, so the main action always works even if WhatsApp doesn't. */}
+                  <a href={site.phoneHref} className="btn btn-ghost h-14 flex-1 px-6 text-base sm:flex-none">
+                    <Phone size={18} /> Call us
+                  </a>
+                  <a
+                    href={`mailto:${site.email}?subject=${encodeURIComponent("New project enquiry")}`}
+                    className="btn btn-ghost h-14 flex-1 px-6 text-base sm:flex-none"
+                  >
+                    <Mail size={18} /> Email us
+                  </a>
+                </div>
                 <ConsentNote className="mt-3 max-w-sm" />
 
                 <ul className="mt-10 grid gap-4 text-[15px] lg:mt-auto lg:pt-10">
@@ -123,6 +142,12 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                     </span>
                     {site.hours}
                   </li>
+                  <li className="flex items-center gap-3 text-muted">
+                    <span className="glass grid size-10 place-items-center rounded-full text-fg">
+                      <MapPin size={16} />
+                    </span>
+                    {site.addressDisplay}
+                  </li>
                 </ul>
               </div>
 
@@ -144,8 +169,9 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                         </span>
                         <p className="mt-6 font-display text-3xl font-light tracking-tight">Your message is ready.</p>
                         <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">
-                          WhatsApp opened in a new tab with your details. Just hit send, and we&apos;ll reply during
-                          business hours.
+                          {via === "email"
+                            ? "Your email app opened with your details. Just hit send, and we'll reply during business hours."
+                            : "WhatsApp opened in a new tab with your details. Just hit send, and we'll reply during business hours."}
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
                           <a
@@ -278,9 +304,14 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                           <p className="text-[13px] leading-snug text-faint">
                             Opens WhatsApp with your details filled in. Nothing is stored on this site.
                           </p>
-                          <button type="submit" className="btn btn-primary h-13 shrink-0 px-7 py-4 text-[15px]">
-                            Get my custom quote <ArrowUpRight size={16} />
-                          </button>
+                          <div className="flex shrink-0 flex-wrap gap-2.5">
+                            <button type="submit" value="whatsapp" className="btn btn-primary h-13 px-7 py-4 text-[15px]">
+                              Get my custom quote <ArrowUpRight size={16} />
+                            </button>
+                            <button type="submit" value="email" className="btn btn-ghost h-13 px-5 py-4 text-[15px]">
+                              <Mail size={16} /> Send by email
+                            </button>
+                          </div>
                         </div>
                       </motion.form>
                     )}

@@ -1,21 +1,36 @@
 "use client";
 
 import { useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { Play } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
+import { useMediaQuery } from "@/lib/use-media-query";
 
-/** Muted looping video that only plays (and only downloads) while it is on screen. */
+const noopSubscribe = () => () => {};
+
+/**
+ * Muted looping video. On desktop it plays (and only downloads) while it is on screen.
+ * On phones, with Data Saver on, or with reduced motion, it shows the poster and downloads
+ * nothing until the visitor taps play, so mobile visitors don't pull megabytes of video.
+ */
 export function AutoVideo({ src, poster, label }: { src: string; poster: string; label: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion() ?? false;
+  const wide = useMediaQuery("(min-width: 1024px)");
+  const saveData = useSyncExternalStore(
+    noopSubscribe,
+    () => !!(navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData,
+    () => false,
+  );
   const [playing, setPlaying] = useState(false);
+  const [started, setStarted] = useState(false);
+  const auto = wide && !reduce && !saveData;
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
     video.muted = true;
-    if (reduce) return;
+    if (!auto && !started) return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) video.play().catch(() => {});
@@ -25,7 +40,7 @@ export function AutoVideo({ src, poster, label }: { src: string; poster: string;
     );
     io.observe(video);
     return () => io.disconnect();
-  }, [reduce]);
+  }, [auto, started]);
 
   return (
     <>
@@ -43,14 +58,17 @@ export function AutoVideo({ src, poster, label }: { src: string; poster: string;
       >
         <source src={src} type="video/mp4" />
       </video>
-      {reduce && !playing && (
+      {!auto && !playing && (
         <button
           type="button"
-          onClick={() => ref.current?.play()}
+          onClick={() => {
+            setStarted(true);
+            ref.current?.play().catch(() => {});
+          }}
           aria-label={`Play: ${label}`}
           className="absolute inset-0 grid place-items-center"
         >
-          <span className="grid size-14 place-items-center rounded-full bg-black/55 text-white backdrop-blur">
+          <span className="grid size-10 place-items-center rounded-full bg-black/55 text-white backdrop-blur sm:size-14">
             <Play size={20} />
           </span>
         </button>

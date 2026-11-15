@@ -21,6 +21,10 @@ export const site = {
   hours: "Mon–Sat · 9:30am–6:30pm IST",
   founder: "Daksh Tandel",
   location: "India",
+  // Matches the business address on the Meta Business account (town level).
+  city: "Honnavar",
+  region: "Karnataka",
+  addressDisplay: "Honnavar, Karnataka, India",
 } as const;
 
 /** Build a WhatsApp deep link (primary number unless `number` is given), optionally with a pre-filled message. */
