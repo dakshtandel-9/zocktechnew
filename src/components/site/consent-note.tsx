@@ -10,11 +10,11 @@ export function ConsentNote({ className, align = "left" }: { className?: string;
   return (
     <p className={cn("text-[12.5px] leading-relaxed text-faint", align === "center" && "text-center", className)}>
       By contacting us you agree to our{" "}
-      <Link href="/terms" className="underline underline-offset-2 transition-colors hover:text-fg">
+      <Link href="/terms" prefetch className="underline underline-offset-2 transition-colors hover:text-fg">
         Terms &amp; Conditions
       </Link>{" "}
       and{" "}
-      <Link href="/privacy" className="underline underline-offset-2 transition-colors hover:text-fg">
+      <Link href="/privacy" prefetch className="underline underline-offset-2 transition-colors hover:text-fg">
         Privacy Policy
       </Link>
       , and to hear from ZockTech on WhatsApp about your enquiry.

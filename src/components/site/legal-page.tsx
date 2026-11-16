@@ -93,7 +93,7 @@ export function LegalPage({ doc, path }: { doc: LegalDoc; path: string }) {
             {other && (
               <p className="mt-6 border-t border-line pt-8 text-sm sm:pl-12 text-muted">
                 See also our{" "}
-                <Link href={other.href} className="font-medium text-brand-text underline underline-offset-4">
+                <Link href={other.href} prefetch className="font-medium text-brand-text underline underline-offset-4">
                   {other.label}
                 </Link>
                 .

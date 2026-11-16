@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Urbanist } from "next/font/google";
+import { PrefetchLegal } from "@/components/site/prefetch-legal";
 import { SmoothScroll } from "@/components/site/smooth-scroll";
 import { ogDefaults, twitterDefaults } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body>
         <SmoothScroll />
+        <PrefetchLegal />
         {children}
       </body>
     </html>

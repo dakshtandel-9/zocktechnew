@@ -125,7 +125,7 @@ export function Footer({ page = "home" }: { page?: SitePage }) {
           </p>
           <nav aria-label="Legal" className="flex items-center gap-5">
             {legalLinks.map((l) => (
-              <Link key={l.href} href={l.href} className="transition-colors hover:text-fg">
+              <Link key={l.href} href={l.href} prefetch className="transition-colors hover:text-fg">
                 {l.label}
               </Link>
             ))}

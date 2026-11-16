@@ -122,7 +122,7 @@ export default function ProcessPage() {
                   <Link href="/faq" className="btn btn-ghost h-11 px-5 text-sm">
                     Read the FAQ <ArrowUpRight size={16} />
                   </Link>
-                  <Link href="/terms" className="btn btn-ghost h-11 px-5 text-sm">
+                  <Link href="/terms" prefetch className="btn btn-ghost h-11 px-5 text-sm">
                     Terms &amp; Conditions
                   </Link>
                 </div>

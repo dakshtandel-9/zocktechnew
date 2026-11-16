@@ -276,11 +276,11 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                             />
                             <span>
                               I agree to ZockTech&apos;s{" "}
-                              <Link href="/terms" target="_blank" className="font-medium underline underline-offset-2 hover:text-brand-text">
+                              <Link href="/terms" prefetch target="_blank" className="font-medium underline underline-offset-2 hover:text-brand-text">
                                 Terms &amp; Conditions
                               </Link>{" "}
                               and{" "}
-                              <Link href="/privacy" target="_blank" className="font-medium underline underline-offset-2 hover:text-brand-text">
+                              <Link href="/privacy" prefetch target="_blank" className="font-medium underline underline-offset-2 hover:text-brand-text">
                                 Privacy Policy
                               </Link>
                               , and to be contacted by ZockTech on WhatsApp, phone and email about my enquiry.{" "}
