@@ -1,7 +1,8 @@
 "use client";
 
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 declare global {
   interface Window {
@@ -11,6 +12,20 @@ declare global {
 
 /** Buttery smooth scrolling on desktop. Native scrolling for touch and reduced-motion users. */
 export function SmoothScroll() {
+  const pathname = usePathname();
+  const lastPath = useRef(pathname);
+
+  // New page = start at the top, instantly. Without this Lenis keeps gliding toward the old page's
+  // scroll target, so a footer link opened the new page at the bottom and then scrolled it up.
+  useLayoutEffect(() => {
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
+    if (window.location.hash) return; // let #anchor links land where they point
+    const lenis = window.__lenis;
+    if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     // Anchor offsets come from `scroll-padding-top` in globals.css (Lenis reads it).
