@@ -4,6 +4,10 @@ import { NextResponse } from "next/server";
  * Receives enquiries from the contact form and appends them to the Google Sheet
  * via a Google Apps Script web app. The script URL + secret stay server-side.
  */
+export async function GET() {
+  return NextResponse.json({ ok: true, message: "Lead API is working" });
+}
+
 export async function POST(req: Request) {
   const url = process.env.LEAD_WEBHOOK_URL;
   if (!url) return NextResponse.json({ ok: false }, { status: 503 });

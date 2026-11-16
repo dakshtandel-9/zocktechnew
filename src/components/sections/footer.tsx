@@ -3,7 +3,7 @@ import { ConsentNote } from "@/components/site/consent-note";
 import { ArrowUp, Instagram, WhatsApp } from "@/components/ui/icons";
 import { Logo } from "@/components/ui/logo";
 import { ZMark } from "@/components/ui/z-mark";
-import { legalLinks, navLinks, phones, pillars, site, whatsapp, type SitePage } from "@/lib/site";
+import { legalLinks, navLinks, offices, phones, pillars, site, whatsapp, type SitePage } from "@/lib/site";
 
 async function Year() {
   "use cache";
@@ -95,7 +95,6 @@ export function Footer({ page = "home" }: { page?: SitePage }) {
                     <a href={p.tel} className="transition-colors hover:text-fg">
                       {p.display}
                     </a>
-                    <span className="ml-2 text-xs text-faint">{p.label}</span>
                   </li>
                 ))}
                 <li>
@@ -104,7 +103,13 @@ export function Footer({ page = "home" }: { page?: SitePage }) {
                   </a>
                 </li>
                 <li>{site.hours}</li>
-                <li>Based in {site.addressDisplay}</li>
+                {offices.map((o) => (
+                  <li key={o.name}>
+                    <span className="font-medium text-fg">{o.name}</span>
+                    <br />
+                    {o.lines.join(" ")}
+                  </li>
+                ))}
                 <li>Serving clients across {site.location}</li>
               </ul>
             </div>

@@ -7,11 +7,11 @@ export const site = {
   name: "ZockTech",
   url: "https://zocktech.com",
   tagline: "Websites that work. Results that show.",
-  // Primary number: every WhatsApp button and call link uses it.
+  // First number: every WhatsApp button and call link uses it.
   phoneDisplay: "+91 97419 90955",
   phoneHref: "tel:+919741990955",
   whatsappNumber: "919741990955",
-  // Secondary number, listed next to the primary wherever contact details are shown.
+  // Second number, listed next to the first wherever contact details are shown.
   phone2Display: "+91 78294 75479",
   phone2Href: "tel:+917829475479",
   whatsapp2Number: "917829475479",
@@ -24,19 +24,37 @@ export const site = {
   // Matches the business address on the Meta Business account (town level).
   city: "Honnavar",
   region: "Karnataka",
-  addressDisplay: "Honnavar, Karnataka, India",
+  addressDisplay: "Bengaluru & Honnavar, Karnataka, India",
 } as const;
 
-/** Build a WhatsApp deep link (primary number unless `number` is given), optionally with a pre-filled message. */
+/** Both office addresses (Udyam-registered details). `lines` is shown on the site, the rest feeds structured data. */
+export const offices = [
+  {
+    name: "Bengaluru office",
+    lines: ["69/2/2, SR Nilaya, MICO Layout,", "10th Main Road, Hongasandra,", "Bengaluru, Karnataka 560114"],
+    street: "69/2/2, SR Nilaya, MICO Layout, 10th Main Road, Hongasandra",
+    city: "Bengaluru",
+    postalCode: "560114",
+  },
+  {
+    name: "Honnavar office",
+    lines: ["Harish Tandel Building, Tonka,", "Kasarkod, Honnavar,", "Uttara Kannada, Karnataka 581342"],
+    street: "Harish Tandel Building, Tonka, Kasarkod",
+    city: "Honnavar",
+    postalCode: "581342",
+  },
+] as const;
+
+/** Build a WhatsApp deep link (first number unless `number` is given), optionally with a pre-filled message. */
 export function whatsapp(message?: string, number: string = site.whatsappNumber) {
   const base = `https://wa.me/${number}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
-/** Both WhatsApp numbers, primary first, for places that list contact details. */
+/** Both WhatsApp numbers, for places that list contact details. */
 export const phones = [
-  { label: "Primary", display: site.phoneDisplay, tel: site.phoneHref, wa: site.whatsappNumber },
-  { label: "Secondary", display: site.phone2Display, tel: site.phone2Href, wa: site.whatsapp2Number },
+  { display: site.phoneDisplay, tel: site.phoneHref, wa: site.whatsappNumber },
+  { display: site.phone2Display, tel: site.phone2Href, wa: site.whatsapp2Number },
 ] as const;
 
 /** Main pages. On the homepage, `id` is also the section the nav highlights while scrolling. */

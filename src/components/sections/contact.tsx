@@ -7,7 +7,7 @@ import { ConsentNote } from "@/components/site/consent-note";
 import { ArrowUpRight, Check, Clock, Instagram, Mail, MapPin, Phone, WhatsApp } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/cn";
-import { contactServices, phones, site, whatsapp } from "@/lib/site";
+import { contactServices, offices, phones, site, whatsapp } from "@/lib/site";
 
 const field =
   "w-full rounded-2xl border border-line bg-chip px-4 py-3.5 text-[15px] text-fg placeholder:text-faint outline-none transition-[border-color,box-shadow] duration-300 focus:border-brand/70 focus:shadow-[0_0_0_4px_rgb(249_148_59/0.15)]";
@@ -132,7 +132,6 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                           <Phone size={16} />
                         </span>
                         <span className="transition-colors group-hover:text-brand">{p.display}</span>
-                        <span className="text-xs text-faint">{p.label}</span>
                       </a>
                     </li>
                   ))}
@@ -158,12 +157,17 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                     </span>
                     {site.hours}
                   </li>
-                  <li className="flex items-center gap-3 text-muted">
-                    <span className="glass grid size-10 place-items-center rounded-full text-fg">
-                      <MapPin size={16} />
-                    </span>
-                    {site.addressDisplay}
-                  </li>
+                  {offices.map((o) => (
+                    <li key={o.name} className="flex items-start gap-3 text-muted">
+                      <span className="glass grid size-10 shrink-0 place-items-center rounded-full text-fg">
+                        <MapPin size={16} />
+                      </span>
+                      <span className="text-sm leading-relaxed">
+                        <span className="block font-medium text-fg">{o.name}</span>
+                        {o.lines.join(" ")}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 

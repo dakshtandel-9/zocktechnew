@@ -1,4 +1,4 @@
-import { faqs, phones, pillars, site } from "@/lib/site";
+import { faqs, offices, phones, pillars, site } from "@/lib/site";
 
 function Script({ data }: { data: unknown }) {
   return (
@@ -32,7 +32,14 @@ export function JsonLd() {
         })),
         email: site.email,
         areaServed: { "@type": "Country", name: "India" },
-        address: { "@type": "PostalAddress", addressLocality: site.city, addressRegion: site.region, addressCountry: "IN" },
+        address: offices.map((o) => ({
+          "@type": "PostalAddress",
+          streetAddress: o.street,
+          addressLocality: o.city,
+          addressRegion: site.region,
+          postalCode: o.postalCode,
+          addressCountry: "IN",
+        })),
         sameAs: [site.instagram],
         founder: { "@type": "Person", name: site.founder },
         openingHoursSpecification: [
