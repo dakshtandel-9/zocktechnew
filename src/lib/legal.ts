@@ -13,9 +13,9 @@ const contactLine = `Email ${site.email}, or call or WhatsApp ${site.phoneDispla
 
 export const privacy: LegalDoc = {
   title: "Privacy Policy",
-  updated: "15 November 2026",
+  updated: "16 November 2026",
   intro:
-    "This policy explains what personal information ZockTech collects, why, and what you can do about it. The short version: we only collect what we need to reply to you and do your project, we never sell it, and this website itself stores nothing about you.",
+    "This policy explains what personal information ZockTech collects, why, and what you can do about it. The short version: we only collect what we need to reply to you and do your project, we never sell it, and this website does not use advertising or analytics cookies.",
   sections: [
     {
       id: "who-we-are",
@@ -49,15 +49,16 @@ export const privacy: LegalDoc = {
       id: "enquiry-form",
       title: "How the enquiry form works",
       body: [
-        "The form on our website does not send or store anything on our servers. When you submit it, it opens WhatsApp (or, if you choose, your email app) with a message containing the details you typed. Nothing is shared until you press send in WhatsApp or your email app.",
-        "Once you send it, the message is handled by WhatsApp (Meta) or your email provider under their own privacy policies, and we receive it like any other message.",
+        "When you submit the form on our website, we record your name, phone number, the services you picked, anything you wrote in the details box, and which consent boxes you ticked (the required consent box and the optional offers box). This is saved in a private spreadsheet that only ZockTech can access, so we can reply to you and keep a record of your consent.",
+        "The form also opens WhatsApp (or, if you choose, your email app) with a message containing the same details. That message is only sent when you press send in WhatsApp or your email app, and it is then handled by WhatsApp (Meta) or your email provider under their own privacy policies.",
+        "The two consent boxes on the form work like this: the first (required) lets us contact you on WhatsApp, phone and email about your enquiry and project. The second (optional) lets us send you offers and news. Leaving the second box unticked never affects your enquiry.",
       ],
     },
     {
       id: "whatsapp",
       title: "WhatsApp messages and your consent",
       body: [
-        `We use WhatsApp Business on two numbers: ${site.phoneDisplay} and ${site.phone2Display}. Both belong to ZockTech.`,
+        `We use WhatsApp Business accounts on two numbers: ${site.phoneDisplay} and ${site.phone2Display}. Both are official ZockTech numbers, and messages from them are sent by our team, not by a personal account.`,
         "We only message you on WhatsApp when you've given us your number and agreed to hear from us, for example by messaging us first, or by ticking the consent box on our enquiry form. That consent covers messages about your enquiry and project: replies, quotes, previews, updates and invoices.",
         "We only send offers and news if you've separately agreed to them, for example with the optional box on our form. Saying no to offers never affects your enquiry or project.",
         "You can stop messages at any time: reply STOP on WhatsApp, or tell us by phone or email. We'll honour your request whether you make it on WhatsApp or anywhere else, and remove you from any offers list. We may still send essential messages about a project you've started with us, unless you ask us to use email instead.",
@@ -176,7 +177,7 @@ export const privacy: LegalDoc = {
 
 export const terms: LegalDoc = {
   title: "Terms & Conditions",
-  updated: "15 November 2026",
+  updated: "16 November 2026",
   intro:
     "These terms explain how working with ZockTech works: quotes, payments, timelines, ownership and the rest. We've kept them short and readable. Your project quote sets out the specifics; these terms cover everything around it.",
   sections: [
@@ -201,7 +202,7 @@ export const terms: LegalDoc = {
       body: [
         `You can reach us on WhatsApp or by phone at ${site.phoneDisplay} or ${site.phone2Display}, or by email at ${site.email}.`,
         "By contacting us, or by sending our enquiry form, you agree to these terms and our Privacy Policy, and to ZockTech contacting you on WhatsApp, phone and email about your enquiry and project. Offers and news are sent only if you separately agree to them.",
-        "You can opt out of WhatsApp messages at any time by replying STOP or telling us, and we'll respect that on or off WhatsApp. Your use of WhatsApp itself is governed by WhatsApp's own terms of service.",
+        "You can opt out of WhatsApp messages at any time by replying STOP or telling us, and we'll respect that on or off WhatsApp. Your use of WhatsApp itself is governed by WhatsApp's Terms of Service and Meta's Privacy Policy.",
         "Most project communication, approvals and updates happen on WhatsApp. A written approval sent on WhatsApp or by email counts as your approval under these terms.",
       ],
     },
@@ -317,7 +318,7 @@ export const terms: LegalDoc = {
       title: "Using this website",
       body: [
         "The content, design and code of this website belong to ZockTech. You may not copy or reuse them without permission. We try to keep the information here accurate and up to date, but it's general information, not a promise or an offer.",
-        "Our Privacy Policy explains how we handle personal information.",
+        "These terms and our Privacy Policy apply together to your use of this website and our services. The Privacy Policy explains how we handle personal information, including what the enquiry form records and how the two consent boxes work.",
       ],
     },
     {
