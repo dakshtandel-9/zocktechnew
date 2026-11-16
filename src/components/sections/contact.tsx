@@ -53,6 +53,22 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
     );
     setLastMessage(message);
     const viaEmail = (e.nativeEvent as SubmitEvent).submitter?.getAttribute("value") === "email";
+    // Save the lead to the Google Sheet. Fire-and-forget: never blocks or breaks WhatsApp/email.
+    void fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      keepalive: true,
+      body: JSON.stringify({
+        name: String(fd.get("name") ?? ""),
+        phone: String(fd.get("phone") ?? ""),
+        services: selected,
+        details: String(fd.get("details") ?? ""),
+        consent: fd.get("consent") === "yes",
+        offers: fd.get("offers") === "yes",
+        via: viaEmail ? "email" : "whatsapp",
+        page: window.location.pathname,
+      }),
+    }).catch(() => {});
     if (viaEmail) {
       window.location.href = `mailto:${site.email}?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(message)}`;
     } else {
@@ -302,7 +318,7 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
 
                         <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-center sm:justify-between">
                           <p className="text-[13px] leading-snug text-faint">
-                            Opens WhatsApp with your details filled in. Nothing is stored on this site.
+                            Opens WhatsApp with your details filled in, and we keep a copy so we can follow up.
                           </p>
                           <div className="flex shrink-0 flex-wrap gap-2.5">
                             <button type="submit" value="whatsapp" className="btn btn-primary h-13 px-7 py-4 text-[15px]">
