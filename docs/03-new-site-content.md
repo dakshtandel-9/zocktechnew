@@ -230,7 +230,7 @@ Existing quotes, triaged. **Every card needs a business name and permission**, a
 - Button: **Get my custom quote**
 - Success message: **Got it, thanks!** We'll message you on WhatsApp within `[X hours]`.
 
-**Contact line:** +91 78294 75479 · hello@zocktech.com · Mon–Sat 9:30am–6:30pm IST
+**Contact line:** +91 78294 75479 · support@zocktech.com · Mon–Sat 9:30am–6:30pm IST
 
 ---
 
@@ -240,7 +240,7 @@ Existing quotes, triaged. **Every card needs a business name and permission**, a
 - **Build:** Landing Pages · Business Websites · E-commerce · Custom Websites · Web Apps
 - **Grow:** Performance Marketing · Digital Marketing
 - **Create:** Graphic Design · Instagram Management · Creator Content
-- **Contact:** WhatsApp +91 78294 75479 · hello@zocktech.com · Mon–Sat 9:30am–6:30pm IST · `[City], India`
+- **Contact:** WhatsApp +91 78294 75479 · support@zocktech.com · Mon–Sat 9:30am–6:30pm IST · `[City], India`
 - **Social:** Instagram (@zocktech) · `[LinkedIn]`
 - **Bottom line:** © 2026 Zocktech · Made in India · `[Privacy]` · `[Terms]`
 

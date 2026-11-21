@@ -7,19 +7,19 @@ export const site = {
   name: "ZockTech",
   url: "https://zocktech.com",
   tagline: "Websites that work. Results that show.",
-  // First number: every WhatsApp button and call link uses it.
-  phoneDisplay: "+91 97419 90955",
-  phoneHref: "tel:+919741990955",
-  whatsappNumber: "919741990955",
-  // Second number, listed next to the first wherever contact details are shown.
-  phone2Display: "+91 78294 75479",
-  phone2Href: "tel:+917829475479",
-  whatsapp2Number: "917829475479",
-  email: "hello@zocktech.com",
+  // Matches the mobile on the Udyam certificate. Every WhatsApp button and call link uses it.
+  phoneDisplay: "+91 63630 73455",
+  phoneHref: "tel:+916363073455",
+  whatsappNumber: "916363073455",
+  email: "support@zocktech.com",
   instagram: "https://instagram.com/zocktech",
   instagramHandle: "@zocktech",
   hours: "Mon–Sat · 9:30am–6:30pm IST",
   founder: "Daksh Tandel",
+  // Matches the Udyam Registration Certificate: enterprise "Daksh Tandel", unit "ZockTech".
+  legalName: "Daksh Tandel",
+  udyam: "UDYAM-KR-27-0049149",
+  legalLine: "ZockTech is a sole proprietorship of Daksh Tandel · Udyam Reg. No. UDYAM-KR-27-0049149",
   location: "India",
   // Matches the business address on the Meta Business account (town level).
   city: "Honnavar",
@@ -27,7 +27,7 @@ export const site = {
   addressDisplay: "Bengaluru & Honnavar, Karnataka, India",
 } as const;
 
-/** Both office addresses (Udyam-registered details). `lines` is shown on the site, the rest feeds structured data. */
+/** Office addresses. Only the Honnavar address is the Udyam-registered address; Bengaluru is an additional working location. `lines` is shown on the site, the rest feeds structured data. */
 export const offices = [
   {
     name: "Bengaluru office",
@@ -37,7 +37,7 @@ export const offices = [
     postalCode: "560114",
   },
   {
-    name: "Honnavar office",
+    name: "Registered office, Honnavar",
     lines: ["Harish Tandel Building, Tonka,", "Kasarkod, Honnavar,", "Uttara Kannada, Karnataka 581342"],
     street: "Harish Tandel Building, Tonka, Kasarkod",
     city: "Honnavar",
@@ -51,10 +51,9 @@ export function whatsapp(message?: string, number: string = site.whatsappNumber)
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
-/** Both WhatsApp numbers, for places that list contact details. */
+/** Contact numbers, for places that list contact details. */
 export const phones = [
   { display: site.phoneDisplay, tel: site.phoneHref, wa: site.whatsappNumber },
-  { display: site.phone2Display, tel: site.phone2Href, wa: site.whatsapp2Number },
 ] as const;
 
 /** Main pages. On the homepage, `id` is also the section the nav highlights while scrolling. */

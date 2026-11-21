@@ -41,6 +41,8 @@ export function JsonLd() {
           addressCountry: "IN",
         })),
         sameAs: [site.instagram],
+        legalName: site.legalName,
+        identifier: { "@type": "PropertyValue", propertyID: "Udyam Registration Number", value: site.udyam },
         founder: { "@type": "Person", name: site.founder },
         openingHoursSpecification: [
           {

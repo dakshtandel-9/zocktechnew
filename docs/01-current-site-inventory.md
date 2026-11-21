@@ -37,7 +37,7 @@ Status key used in the last column of each section:
 | Channel | Value |
 |---|---|
 | WhatsApp / phone | +91 78294 75479 (`https://wa.me/917829475479`) |
-| Email | hello@zocktech.com |
+| Email | support@zocktech.com |
 | Instagram | https://instagram.com/zocktech |
 | Hours | Mon–Sat 9:30am–6:30pm IST |
 | Founder | Daksh Tandel |
@@ -208,7 +208,7 @@ Status: REWORK. Stock photos next to client names make the reviews look fake to 
 - H2: **Ready to get started?**
 - Body: Chat with Daksh directly on WhatsApp. Most projects are scoped and started within 24 hours.
 - CTA: **Chat on WhatsApp Now**
-- Contact line: +91 78294 75479 · hello@zocktech.com · Mon–Sat 9:30am–6:30pm IST
+- Contact line: +91 78294 75479 · support@zocktech.com · Mon–Sat 9:30am–6:30pm IST
 
 Status: KEEP the idea, add a short enquiry form.
 

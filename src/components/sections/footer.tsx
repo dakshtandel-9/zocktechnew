@@ -128,6 +128,7 @@ export function Footer({ page = "home" }: { page?: SitePage }) {
           <p>
             © <Year /> ZockTech · Made in India
           </p>
+          <p className="text-center text-[12px] text-faint">{site.legalLine}</p>
           <nav aria-label="Legal" className="flex items-center gap-5">
             {legalLinks.map((l) => (
               <Link key={l.href} href={l.href} prefetch className="transition-colors hover:text-fg">

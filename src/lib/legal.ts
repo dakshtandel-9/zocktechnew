@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export type LegalSection = { id: string; title: string; body: (string | string[])[] };
 export type LegalDoc = { title: string; updated: string; intro: string; sections: LegalSection[] };
 
-const contactLine = `Email ${site.email}, or call or WhatsApp ${site.phoneDisplay} or ${site.phone2Display} (${site.hours}).`;
+const contactLine = `Email ${site.email}, or call or WhatsApp ${site.phoneDisplay} (${site.hours}).`;
 
 export const privacy: LegalDoc = {
   title: "Privacy Policy",
@@ -21,7 +21,7 @@ export const privacy: LegalDoc = {
       id: "who-we-are",
       title: "Who we are",
       body: [
-        `ZockTech (“we”, “us”) is a digital studio based in India, founded by ${site.founder}. We design and build websites and web apps, run digital marketing, and create design and social media content.`,
+        `ZockTech (“we”, “us”) is a digital studio based in India, run as a sole proprietorship of ${site.legalName} (Udyam Registration No. ${site.udyam}), with its registered office in Honnavar, Karnataka. We design and build websites and web apps, run digital marketing, and create design and social media content.`,
         `This policy covers ${site.url.replace("https://", "")} (the “website”) and the information you share with us when you enquire about or use our services. ${contactLine}`,
       ],
     },
@@ -58,7 +58,7 @@ export const privacy: LegalDoc = {
       id: "whatsapp",
       title: "WhatsApp messages and your consent",
       body: [
-        `We use WhatsApp Business accounts on two numbers: ${site.phoneDisplay} and ${site.phone2Display}. Both are official ZockTech numbers, and messages from them are sent by our team, not by a personal account.`,
+        `We use WhatsApp on our official ZockTech number, ${site.phoneDisplay}. Messages from it are sent by our team, not by a personal account.`,
         "We only message you on WhatsApp when you've given us your number and agreed to hear from us, for example by messaging us first, or by ticking the consent box on our enquiry form. That consent covers messages about your enquiry and project: replies, quotes, previews, updates and invoices.",
         "We only send offers and news if you've separately agreed to them, for example with the optional box on our form. Saying no to offers never affects your enquiry or project.",
         "You can stop messages at any time: reply STOP on WhatsApp, or tell us by phone or email. We'll honour your request whether you make it on WhatsApp or anywhere else, and remove you from any offers list. We may still send essential messages about a project you've started with us, unless you ask us to use email instead.",
@@ -185,7 +185,7 @@ export const terms: LegalDoc = {
       id: "about",
       title: "About these terms",
       body: [
-        `These terms apply to your use of ${site.url.replace("https://", "")} and to any services you buy from ZockTech (“we”, “us”). By accepting a quote or paying an advance, you (“you”, the client) agree to them.`,
+        `These terms apply to your use of ${site.url.replace("https://", "")} and to any services you buy from ZockTech (“we”, “us”). By accepting a quote or paying an advance, you (“you”, the client) agree to them. ZockTech is a sole proprietorship of ${site.legalName}, Udyam Registration No. ${site.udyam}, registered office: Harish Tandel Building, Tonka, Kasarkod, Honnavar, Uttara Kannada, Karnataka 581342.`,
         "If your written quote or proposal says something different from these terms, the quote wins for that project.",
       ],
     },
@@ -200,7 +200,7 @@ export const terms: LegalDoc = {
       id: "contacting-us",
       title: "Contacting us and WhatsApp",
       body: [
-        `You can reach us on WhatsApp or by phone at ${site.phoneDisplay} or ${site.phone2Display}, or by email at ${site.email}.`,
+        `You can reach us on WhatsApp or by phone at ${site.phoneDisplay}, or by email at ${site.email}.`,
         "By contacting us, or by sending our enquiry form, you agree to these terms and our Privacy Policy, and to ZockTech contacting you on WhatsApp, phone and email about your enquiry and project. Offers and news are sent only if you separately agree to them.",
         "You can opt out of WhatsApp messages at any time by replying STOP or telling us, and we'll respect that on or off WhatsApp. Your use of WhatsApp itself is governed by WhatsApp's Terms of Service and Meta's Privacy Policy.",
         "Most project communication, approvals and updates happen on WhatsApp. A written approval sent on WhatsApp or by email counts as your approval under these terms.",

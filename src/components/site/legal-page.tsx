@@ -51,14 +51,6 @@ export function LegalPage({ doc, path }: { doc: LegalDoc; path: string }) {
                   >
                     <WhatsApp size={15} /> {site.phoneDisplay}
                   </a>
-                  <a
-                    href={whatsapp(`Hi ZockTech! I have a question about your ${doc.title}.`, site.whatsapp2Number)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 transition-colors hover:text-brand"
-                  >
-                    <WhatsApp size={15} /> {site.phone2Display}
-                  </a>
                 </div>
                 <ConsentNote className="mt-4" />
               </div>

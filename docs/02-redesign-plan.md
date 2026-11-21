@@ -186,7 +186,7 @@ The current site has 10 sections plus a duplicate nav. The new site has 8 sectio
   - GA4 (or Vercel Analytics) and the Meta Pixel
   - Events: `whatsapp_click` (labelled by where on the page it was clicked), `form_submit`, `service_chip_click`, `work_card_click`
   - UTM parameters passed into the form's hidden fields
-- **Leads go to:** email (hello@zocktech.com) and a Google Sheet or simple CRM.
+- **Leads go to:** email (support@zocktech.com) and a Google Sheet or simple CRM.
 
 ## 8. SEO and technical plan
 
