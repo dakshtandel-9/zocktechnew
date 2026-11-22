@@ -7,10 +7,10 @@ export const site = {
   name: "ZockTech",
   url: "https://zocktech.com",
   tagline: "Websites that work. Results that show.",
-  // Matches the mobile on the Udyam certificate. Every WhatsApp button and call link uses it.
-  phoneDisplay: "+91 63630 73455",
-  phoneHref: "tel:+916363073455",
-  whatsappNumber: "916363073455",
+  // Every WhatsApp button and call link uses it.
+  phoneDisplay: "+91 91877 28769",
+  phoneHref: "tel:+919187728769",
+  whatsappNumber: "919187728769",
   email: "support@zocktech.com",
   instagram: "https://instagram.com/zocktech",
   instagramHandle: "@zocktech",
