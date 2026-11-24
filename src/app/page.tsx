@@ -4,7 +4,6 @@ import { Contact } from "@/components/sections/contact";
 import { Hero } from "@/components/sections/hero";
 import { NextSteps, ServicesPreview } from "@/components/sections/home-links";
 import { Philosophy } from "@/components/sections/philosophy";
-import { Testimonials } from "@/components/sections/testimonials";
 import { Work } from "@/components/sections/work";
 import { JsonLd } from "@/components/site/json-ld";
 import { SiteShell } from "@/components/site/site-shell";
@@ -25,7 +24,6 @@ export default function Home() {
         <ServicesPreview />
         <Band />
         <Work />
-        <Testimonials />
         <NextSteps />
         <Contact />
       </main>

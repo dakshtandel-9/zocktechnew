@@ -12,7 +12,7 @@ export const site = {
   phoneHref: "tel:+919187728769",
   whatsappNumber: "919187728769",
   email: "support@zocktech.com",
-  instagram: "https://instagram.com/zocktech",
+  instagram: "https://www.instagram.com/zocktech/",
   instagramHandle: "@zocktech",
   hours: "Mon–Sat · 9:30am–6:30pm IST",
   founder: "Daksh Tandel",
@@ -208,13 +208,6 @@ export const moreWork = [
   { name: "First Frame Media", tag: "LinkedIn branding", image: "/work/more/firstframe.jpg" },
 ] as const;
 
-export const stats = [
-  { value: 50, suffix: "+", label: "Projects delivered" },
-  { value: 5, suffix: " days", label: "Typical website launch" },
-  { value: 24, suffix: "h", label: "To scope & kick off" },
-  { value: 100, suffix: "%", label: "Client satisfaction" },
-] as const;
-
 export const process = [
   {
     n: "01",
@@ -294,17 +287,6 @@ export const included = [
   { title: "Tracking set up", desc: "Know which pages, ads and buttons bring enquiries, from day one." },
   { title: "You own it", desc: "Once paid in full, the website, its content and every login are yours." },
   { title: "Support after launch", desc: "Updates, new pages and fixes whenever you need them." },
-] as const;
-
-export const testimonials = [
-  { name: "Rahul Shetty", quote: "ZockTech delivered my business website in just 3 days. Clean UI and super fast loading." },
-  { name: "Priya Nair", quote: "The design looks premium. I started getting leads within the first week itself." },
-  { name: "Amit Verma", quote: "Very smooth process. Daksh handled everything from domain to deployment." },
-  { name: "Sneha Kulkarni", quote: "Loved the mobile responsiveness. My clients mostly use phones and it works perfectly." },
-  { name: "Kiran Naik", quote: "Communication was very clear on WhatsApp. Got regular updates during development." },
-  { name: "Meera Joshi", quote: "Super fast service. Website went live in 4 days and everything worked perfectly." },
-  { name: "Vikram Desai", quote: "ZockTech understands business needs, not just design. That made a big difference." },
-  { name: "Anjali Sharma", quote: "The website design looks clean and modern. Exactly what I had in mind." },
 ] as const;
 
 export type Faq = { q: string; a: string };

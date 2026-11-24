@@ -40,7 +40,7 @@ export function CtaBand({
                 rel="noopener noreferrer"
                 className="btn btn-primary h-13 w-full px-7 py-4 text-[15px] sm:w-auto"
               >
-                <WhatsApp size={19} /> Chat on WhatsApp
+                <WhatsApp size={19} fill="#000" /> Chat on WhatsApp
               </a>
               <Link href="/contact" className="btn btn-ghost h-13 w-full px-7 py-4 text-[15px] sm:w-auto">
                 Get a custom quote <ArrowUpRight size={16} />

@@ -109,7 +109,7 @@ export function Contact({ n = "05", asPage = false }: { n?: string; asPage?: boo
                     rel="noopener noreferrer"
                     className="btn btn-primary h-14 w-full px-7 text-base sm:w-fit"
                   >
-                    <WhatsApp size={20} /> Chat on WhatsApp
+                    <WhatsApp size={20} fill="#000" /> Chat on WhatsApp
                   </a>
                   {/* Non-WhatsApp routes, so the main action always works even if WhatsApp doesn't. */}
                   <a href={site.phoneHref} className="btn btn-ghost h-14 flex-1 px-6 text-base sm:flex-none">

@@ -423,7 +423,7 @@ function Cta({ cs }: { cs: CaseStudy }) {
             rel="noopener noreferrer"
             className="btn btn-primary h-13 px-7 text-[15px]"
           >
-            <WhatsApp size={19} /> Start your project
+            <WhatsApp size={19} fill="#000" /> Start your project
           </a>
           <Link href="/work" className="btn btn-ghost h-13 px-7 text-[15px]">
             See all work <ArrowUpRight size={16} />

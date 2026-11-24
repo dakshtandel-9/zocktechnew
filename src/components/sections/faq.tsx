@@ -45,7 +45,7 @@ export function FAQ() {
                 rel="noopener noreferrer"
                 className="btn btn-primary mt-5 h-11 px-5 text-sm"
               >
-                <WhatsApp size={17} /> Chat on WhatsApp
+                <WhatsApp size={17} fill="#000" /> Chat on WhatsApp
               </a>
               <ConsentNote className="mt-4" />
             </div>

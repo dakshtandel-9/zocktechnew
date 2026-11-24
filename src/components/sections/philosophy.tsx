@@ -3,10 +3,8 @@
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
-import { Counter } from "@/components/ui/counter";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/cn";
-import { stats } from "@/lib/site";
 
 const statement =
   "We don't just design websites. We build the digital engine that helps your brand get found, get chosen and keep growing.";
@@ -128,20 +126,6 @@ export function Philosophy() {
           </Reveal>
         </div>
 
-        <dl className="mt-5 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal
-              key={s.label}
-              delay={i * 0.08}
-              className="glass glass-edge flex flex-col-reverse gap-3 rounded-[24px] p-6 lg:p-7"
-            >
-              <dt className="text-sm text-muted">{s.label}</dt>
-              <dd className="font-display text-[clamp(2.2rem,4vw,3.4rem)] font-semibold leading-none tracking-[-0.04em]">
-                <Counter value={s.value} suffix={s.suffix} />
-              </dd>
-            </Reveal>
-          ))}
-        </dl>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+import { BusinessDetails } from "@/components/sections/business-details";
 import { Contact } from "@/components/sections/contact";
 import { NextSteps } from "@/components/sections/home-links";
 import { SiteShell } from "@/components/site/site-shell";
@@ -15,6 +16,7 @@ export default function ContactPage() {
     <SiteShell page="contact">
       <main id="top">
         <Contact asPage n="hello" />
+        <BusinessDetails />
         <div className="pb-24 lg:pb-32">
           <NextSteps />
         </div>

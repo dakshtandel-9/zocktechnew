@@ -257,7 +257,7 @@ export function Nav({ page = "home" }: { page?: SitePage }) {
               className="relative mt-auto grid gap-3 pt-10"
             >
               <a href={talkLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary h-14 text-base">
-                <WhatsApp size={20} /> Chat on WhatsApp
+                <WhatsApp size={20} fill="#000" /> Chat on WhatsApp
               </a>
               <ConsentNote />
               <div className="flex items-center justify-between text-sm text-muted">

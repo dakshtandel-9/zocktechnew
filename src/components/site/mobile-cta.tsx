@@ -61,7 +61,7 @@ export function MobileCta({ quoteHref = "#contact", endId = "contact" }: { quote
           rel="noopener noreferrer"
           className="btn btn-primary h-12 flex-[1.4] text-sm"
         >
-          <WhatsApp size={18} /> WhatsApp us
+          <WhatsApp size={18} fill="#000" /> WhatsApp us
         </a>
       </div>
     </div>
